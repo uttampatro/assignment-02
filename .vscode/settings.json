@@ -1,0 +1,12 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "prettier.singleQuote": true,
+    "prettier.arrowParens": "avoid",
+    "html.format.unformattedContentDelimiter": "",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "prettier.tabWidth": 4,
+    "cSpell.words": ["allowfullscreen", "gmail", "Mnpl"]
+}

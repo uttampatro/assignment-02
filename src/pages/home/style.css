@@ -1,0 +1,83 @@
+.home {
+    width: 100%;
+}
+
+.homeHeader {
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    padding: 20px;
+}
+
+.homeHeader > button {
+    cursor: pointer;
+    border-radius: 5px;
+    height: 30px;
+    width: 200px;
+    background-color: lightskyblue;
+    font-size: smaller;
+}
+
+.userDetails_closeButton {
+    display: flex;
+    border-right: 1px solid lightgray;
+}
+.userDetails_closeButton > h2 {
+    margin-top: 13px;
+    padding-left: 120px;
+    font-size: large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.dialog_form > h5 {
+    margin-bottom: 5px;
+    font-size: medium;
+    color: black;
+}
+
+.dialog_form > input {
+    height: 30px;
+    padding-left: 5px;
+    margin-bottom: 10px;
+    background-color: white;
+    width: 98%;
+}
+
+.home_addUserButton {
+    cursor: pointer;
+    height: 40px;
+    width: 100%;
+    font-size: larger;
+    background-color: lightskyblue;
+    border-radius: 5px;
+}
+
+.home_addUserButton:hover {
+    background-color: lightsteelblue;
+}
+
+.home_body {
+    position: sticky;
+}
+
+.home_body > Table {
+    width: 80%;
+    margin-left: 150px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid lightgray;
+}
+
+.home_footer {
+    display: flex;
+    justify-content: center;
+}
+
+.home_footer > Button {
+    cursor: pointer;
+    height: 30px;
+    width: 100px;
+    background-color: lightskyblue;
+    font-size: small;
+}
