@@ -152,10 +152,12 @@ function Home() {
     }, []);
 
     const [showAddUserDialog, setAddUserDialog] = useState(false);
-    const [showUpdateUserDialog, setUpdateUserDialog] = useState(false);
 
     const openAddUserDialog = () => setAddUserDialog(true);
     const closeAddUserDialog = () => setAddUserDialog(false);
+
+    const [showUpdateUserDialog, setUpdateUserDialog] = useState(false);
+
     const openUpdateUserDialog = (user: any) => {
         setCurrentRow(user);
         setUpdateUserDialog(true);
@@ -320,6 +322,7 @@ function Home() {
                                         <TableCell>{user.hobbies}</TableCell>
                                         <TableCell>
                                             <Button
+                                                style={{ marginBottom: '10px' }}
                                                 onClick={() =>
                                                     openUpdateUserDialog(user)
                                                 }
