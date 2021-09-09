@@ -9,10 +9,9 @@ function App() {
         <div className="app">
             <Switch>
                 {/* <Route path="/">
-                    <Redirect to={'/home'}></Redirect>
+                    <Redirect to={'/'}></Redirect>
                 </Route> */}
-                <Route path={'/home'} component={Home} />
-                <Route path={'/updateUser/:id'} component={Update} />
+                <Route path={'/'} component={Home} />
             </Switch>
         </div>
     );
