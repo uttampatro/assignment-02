@@ -49,6 +49,13 @@ function Home() {
     const [hobbies, setHobbies] = useState('');
     const [users, setUsers] = useState<any[]>([]);
 
+    const [selectedRow, setSelectedRow] = useState({
+        name: '',
+        email: '',
+        phoneNumber: '',
+        hobbies: '',
+    });
+
     const creatingUser = async () => {
         try {
             const data = await userService.createUser({
@@ -90,6 +97,7 @@ function Home() {
 
     const sendEmail = (e: any) => {
         e.preventDefault();
+        window.location.href = 'mailto:' + 'uttampatro786@gmail.com';
     };
 
     useEffect(() => {
@@ -184,70 +192,71 @@ function Home() {
                 </Dialog>
             </div>
 
-            <div className="home_body">
-                <Table className={classes.table}>
-                    <TableHead>
-                        <TableRow className={classes.thead}>
-                            <TableCell>
-                                <input
-                                    style={{ cursor: 'pointer' }}
-                                    type="checkbox"
-                                />
-                            </TableCell>
-                            <TableCell>Id</TableCell>
-                            <TableCell>Name</TableCell>
-                            <TableCell>Phone Number</TableCell>
-                            <TableCell>Email</TableCell>
-                            <TableCell>Hobbies</TableCell>
-                            <TableCell>Update/Delete</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {users.map(user => (
-                            <TableRow className={classes.row} key={user._id}>
-                                <TableCell>
-                                    <input
-                                        style={{ cursor: 'pointer' }}
-                                        type="checkbox"
-                                    />
-                                </TableCell>
-                                <TableCell>1</TableCell>
-                                <TableCell>{user.name}</TableCell>
-                                <TableCell>{user.phoneNumber}</TableCell>
-                                <TableCell>{user.email}</TableCell>
-                                <TableCell>{user.hobbies}</TableCell>
-                                <TableCell>
-                                    <Link to={`/updateUser/${user._id}`}>
-                                        <Button
-                                            key={user._id}
-                                            color="primary"
-                                            variant="contained"
-                                        >
-                                            Update
-                                        </Button>
-                                    </Link>{' '}
-                                    <Button
-                                        color="secondary"
-                                        variant="contained"
-                                        onClick={() => deleteUser(user._id)}
-                                    >
-                                        Delete
-                                    </Button>
-                                </TableCell>
+            <form method="post">
+                <div className="home_body">
+                    <Table className={classes.table}>
+                        <TableHead>
+                            <TableRow className={classes.thead}>
+                                <TableCell></TableCell>
+                                <TableCell>ID</TableCell>
+                                <TableCell>Name</TableCell>
+                                <TableCell>Phone Number</TableCell>
+                                <TableCell>Email</TableCell>
+                                <TableCell>Hobbies</TableCell>
+                                <TableCell>Update/Delete</TableCell>
                             </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </div>
+                        </TableHead>
+                        <TableBody>
+                            {users.map(user => (
+                                <TableRow
+                                    className={classes.row}
+                                    key={user._id}
+                                >
+                                    <TableCell>
+                                        <input
+                                            style={{ cursor: 'pointer' }}
+                                            type="checkbox"
+                                        />
+                                    </TableCell>
+                                    <TableCell>1</TableCell>
+                                    <TableCell>{user.name}</TableCell>
+                                    <TableCell>{user.phoneNumber}</TableCell>
+                                    <TableCell>{user.email}</TableCell>
+                                    <TableCell>{user.hobbies}</TableCell>
+                                    <TableCell>
+                                        <Link to={`/updateUser/${user._id}`}>
+                                            <Button
+                                                key={user._id}
+                                                color="primary"
+                                                variant="contained"
+                                            >
+                                                Update
+                                            </Button>
+                                        </Link>{' '}
+                                        <Button
+                                            color="secondary"
+                                            variant="contained"
+                                            onClick={() => deleteUser(user._id)}
+                                        >
+                                            Delete
+                                        </Button>
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </div>
 
-            <div className="home_footer">
-                <Button
-                    variant="contained"
-                    style={{ display: 'flex', justifyContent: 'center' }}
-                >
-                    Send
-                </Button>
-            </div>
+                <div className="home_footer">
+                    <Button
+                        onClick={sendEmail}
+                        variant="contained"
+                        style={{ display: 'flex', justifyContent: 'center' }}
+                    >
+                        Send
+                    </Button>
+                </div>
+            </form>
         </div>
     );
 }
