@@ -30,8 +30,7 @@ const useStyles = makeStyles({
     thead: {
         '& > *': {
             fontSize: 20,
-            background: '#000000',
-            color: '#FFFFFF',
+            background: 'lightgray',
         },
     },
     row: {
@@ -56,7 +55,7 @@ function Home() {
     const classes = useStyles();
     const [users, setUsers] = useState<any[]>([]);
     const [order, setOrder] = useState<'asc' | 'desc' | undefined>('asc');
-    const [orderBy, setOrderBy] = useState<string>('calories');
+    const [orderBy, setOrderBy] = useState<string>('');
     const [selectedRows, setSelectedRows] = useState<any[]>([]);
     const [currentRow, setCurrentRow] = useState<any>({
         _id: '',
