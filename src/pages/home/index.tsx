@@ -321,7 +321,9 @@ function Home() {
                                         <TableCell>{user.hobbies}</TableCell>
                                         <TableCell>
                                             <Button
-                                                style={{ marginBottom: '10px' }}
+                                                style={{
+                                                    margin: '5px',
+                                                }}
                                                 onClick={() =>
                                                     openUpdateUserDialog(user)
                                                 }
