@@ -143,7 +143,7 @@ function Home() {
             body += `Name: ${row.name}, Phone: ${row.phoneNumber}, Email: ${row.email}, Hobbies: ${row.hobbies}`;
         });
         console.log(body);
-        window.location.href = `mailto:info@redpositive.in?subject=${'Data'}&body=${body}`;
+        window.location.href = `mailto:?subject=${'Data'}&body=${body}`;
     };
 
     useEffect(() => {
